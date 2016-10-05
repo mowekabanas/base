@@ -6,6 +6,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
+<link rel="stylesheet" href="dist/css/base.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
@@ -14,9 +15,52 @@
 <script src="dist/js/classList.min.js"></script>
 <![endif]-->
 
+<style>
+
+	span {
+		-webkit-transition: color .6s;
+		-moz-transition: color .6s;
+		-ms-transition: color .6s;
+		-o-transition: color .6s;
+		transition: color .6s;
+	}
+
+</style>
+
 <body>
 
+<h1><span id="progress" class="icon-progress-"></span></h1>
+<h1><span class="icon-instagram animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-facebook animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-facebook-official animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-facebook-squared animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-spin1 animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-spin2 animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-spin3 animate-spin font-light-blue-a400"></span></h1>
+<h1><span class="icon-spin4 animate-spin font-light-blue-a400"></span></h1>
 
+<script>
+
+	var progress = document.getElementById('progress');
+	var count = 0;
+
+	var progressClass = [
+		'icon-progress-0 font-red-900',
+		'icon-progress-1 font-red',
+		'icon-progress-2 font-green-400',
+		'icon-progress-3 font-light-green'
+	];
+
+	setInterval(function () {
+
+		progress.className = progressClass[count++];
+
+		if (count > 3)
+			count = 0;
+
+	}, 600);
+
+</script>
 
 </body>
 

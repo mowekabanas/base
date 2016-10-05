@@ -104,6 +104,7 @@ gulp.task('js', function() {
 	gulp.src(source.js.location + source.js.content)
 		.pipe(concat(_PROJECTNAME + '.js'))
 		.pipe(gulp.dest(dist.js.location))
+		.pipe(watch('**/*.js'))
 		.pipe(uglify({
 			preserveComments: 'some'
 		}))
@@ -152,10 +153,6 @@ gulp.task('serve', function () {
 		}
 	});
 
-	gulp.watch([source.css.location + source.css.content], ['css-watch']);
-	gulp.watch([source.js.location + source.js.content], ['js-watch']);
-	gulp.watch(source.index.content).on("change", browserSync.reload);
-
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['js', 'serve']);
